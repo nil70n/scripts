@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "autohotkey",
+      "request": "launch",
+      "name": "AHK v2: Run current file",
+      "runtime": "${env:USERPROFILE}\\AppData\\Local\\Programs\\AutoHotkey\\v2\\AutoHotkey64.exe",
+      "program": "${file}",
+      "stopOnEntry": false,
+      "useAutoHotkeyX": false
+    }
+  ]
+}
