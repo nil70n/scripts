@@ -5,7 +5,7 @@
 # Reload AutoHotkey scripts
 ahk() {
     # Reload only the ahk.ah2 script
-    local ahk_file="$ROOT/ahk/ahk.ah2"
+    local ahk_file="$ROOT_DIR/ahk/ahk.ah2"
     local ahk_home="$HOME/Documents/AutoHotkey"
 
     ahk_reload $ahk_file
@@ -35,7 +35,7 @@ ahk_reload() {
 # Aspire project management
 asp() {
     local projects_file root
-    projects_file="$ROOT/projects.json"
+    projects_file="$ROOT_DIR/projects.json"
 
     root=$(jq -r --arg name "$2" '.[$name].root' "$projects_file")
 

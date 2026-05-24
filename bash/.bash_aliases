@@ -1,8 +1,5 @@
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ROOT="$(cd "$DIR/.." && pwd)"
-
-echo $DIR
-echo $ROOT
+ROOT_DIR="$(cd "$DIR/.." && pwd)"
 
 . "$DIR/funcs.sh"
 . ~/.lib.sh
@@ -12,4 +9,4 @@ alias scriptrepo="code ../../"
 alias reload=". ~/.bash_profile"
 
 # aspire
-alias aspclean="pwsh ../pwsh/aspire_clean.ps1"
+alias aspclean="pwsh $ROOT_DIR/pwsh/aspire_clean.ps1"
