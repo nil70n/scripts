@@ -1,5 +1,4 @@
 {
-  // AutoHotkey v2 LSP (thqby.vscode-autohotkey2-lsp)
   "AutoHotkey2.InterpreterPath": "${env:USERPROFILE}\\AppData\\Local\\Programs\\AutoHotkey\\v2\\AutoHotkey64.exe",
   "AutoHotkey2.ActionWhenV1IsDetected": "SwitchToV1",
   "AutoHotkey2.GeneralConfiguration.ShowOutput": "always",

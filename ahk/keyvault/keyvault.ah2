@@ -13,7 +13,12 @@ KvLoad()
 KvLoad() {
     global DevKv := GetKvValueMap("d")
     global TstKv := GetKvValueMap("t")
-    SetTimer(() => KvLoad(), 3600000 * EnvGet("SLEEP_HOURS")) ; Refresh every hour
+
+    if (!EnvGet("SLEEP_HOURS")) {
+        LoadDotEnv()
+    }
+
+    SetTimer(() => KvLoad(), 3600000 * Integer(EnvGet("SLEEP_HOURS") || 2))
 }
 
 IsKvKey(key) => SecretMap.Has(key) || VaultMap.Has(key)

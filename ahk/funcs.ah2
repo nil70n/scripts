@@ -1,6 +1,14 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
 
+Initialize() {
+    currentDir := ""
+    SplitPath(A_LineFile, , &currentDir)
+
+    SetWorkingDir(currentDir)
+    LoadDotEnv()
+}
+
 ReadChar() {
     ih := InputHook("L1 T3")
     ih.Start()
@@ -8,8 +16,10 @@ ReadChar() {
     return ih.Input
 }
 
-LoadDotEnv(path) {
-    For line in StrSplit(FileRead(path), "`n", "`r") {
+LoadDotEnv() {
+    
+    TrayTip(A_WorkingDir)
+    For line in StrSplit(FileRead("..\.env"), "`n", "`r") {
         if (line = "" || SubStr(line, 1, 1) = "#")
             continue
         eq := InStr(line, "=")

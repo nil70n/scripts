@@ -1,14 +1,15 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
 
+Initialize()
+
 #Include keyvault\keyvault.ah2
 #Include funcs.ah2
+
 
 ; Trigger: Ctrl + Alt + K
 ^!k::
 {
-    LoadDotEnv(A_ScriptDir . "\..\.env")
-
     ToClipboard := False
     Result := ""
     Trace := Arg := ReadChar()
