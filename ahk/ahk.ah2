@@ -24,6 +24,10 @@ Initialize()
         Result := KvGet(Arg)
     }
 
+    if (Arg = "F5") {
+        return
+    }
+
     if (!Result) {
         TrayTip("Please try again. Trace: " . Trace, "Invalid Key", 3)
         return

@@ -5,7 +5,7 @@ ROOT_DIR="$(cd "$DIR/.." && pwd)"
 . ~/.lib.sh
 
 # bash funcs
-alias scriptrepo="code ../../"
+alias scriptrepo="code $ROOT"
 alias reload=". ~/.bash_profile"
 
 # aspire

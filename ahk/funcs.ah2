@@ -11,8 +11,16 @@ Initialize() {
 
 ReadChar() {
     ih := InputHook("L1 T3")
+    ih.KeyOpt("{F5}", "E") ; 'E' makes F5 terminate the hook
+    ih.KeyOpt("{F5}", "S") ; 'S' suppresses F5 (blocks it from the active window)
+
     ih.Start()
     ih.Wait()
+
+    if (ih.EndReason == "EndKey" && ih.EndKey == "F5") {
+        return "F5"
+    }
+
     return ih.Input
 }
 
